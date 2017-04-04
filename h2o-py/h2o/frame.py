@@ -2218,7 +2218,6 @@ class H2OFrame(object):
         @return An H2OFrame with a single column representing the tokenized Strings. Original rows of the input DF are separated by NA.
         """
         fr = H2OFrame._expr(expr=ExprNode("tokenize", self, split))
-        fr._ex._cache.nrows = self.nrow
         return fr
 
     def countmatches(self, pattern):
